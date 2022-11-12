@@ -44,3 +44,8 @@ Setelah masuk
 composer install
 
 ```
+
+### Cara Pakai
+
+masuk ke localhost kalian.
+
