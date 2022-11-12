@@ -1,27 +1,46 @@
 
 ## Laravel Ecosystem
 
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Laravel Ekosistem sudah termasuk : 
+- Database MariaDB
+- Database MongoDB
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Package :
+- jenssegers/mongodb
+- passport
 
-### Premium Partners
+### Cara Install
 
-- **[Vehikl](https://vehikl.com/)**
+Environment termasuk config database :
+
+```
+cp .env.example .env
+cp .docker/.env.example .docker/.env
+
+```
+Build images
+
+```
+docker-compose -f .docker/development.yml -f --build
+
+```
+
+Masuk ke dalam container untuk menginstall composer
+
+```
+docker ps
+
+```
+
+```
+docker exec -it {ID_CONTAINER} bash
+
+```
+
+Setelah masuk
 
 
-## Contributing
+```
+composer install
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
