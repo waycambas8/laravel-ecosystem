@@ -1,0 +1,8 @@
+{
+    "http-basic": {
+        "github.com": {
+            "username": "[YOUR-GITHUB-USERNAME]",
+            "password": "ghp_[YOUR-PERSONAL-TOKEN]"
+        }
+    }
+}

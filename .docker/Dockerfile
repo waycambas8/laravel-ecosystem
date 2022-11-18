@@ -46,4 +46,6 @@ RUN docker-php-ext-install \
   dom \
   session
 
+COPY .docker/auth.json /root/.composer/auth.json
+
 EXPOSE 9080
