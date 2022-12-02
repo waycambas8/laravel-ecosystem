@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
   libxml2-dev \
   libmemcached-dev \
   libmemcached11 \
+  librdkafka-dev \
   build-essential \
   libmcrypt-dev \
   libreadline-dev \
@@ -27,6 +28,10 @@ RUN apt-get install -y libzip-dev zlib1g-dev \
 
 RUN pecl install mongodb \
     && docker-php-ext-enable mongodb \
+    &&  pecl config-set php_ini "${PHP_INI_DIR}/php.ini"
+
+RUN pecl install rdkafka \
+    && docker-php-ext-enable rdkafka \
     &&  pecl config-set php_ini "${PHP_INI_DIR}/php.ini"
 
 RUN docker-php-ext-install intl
