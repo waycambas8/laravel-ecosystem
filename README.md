@@ -21,7 +21,7 @@ cp .docker/.env.example .docker/.env
 Build images
 
 ```
-docker-compose -f .docker/development.yml -f --build
+docker-compose -f .docker/development.yml up --build
 
 ```
 
