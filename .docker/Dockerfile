@@ -34,6 +34,11 @@ RUN pecl install rdkafka \
     && docker-php-ext-enable rdkafka \
     &&  pecl config-set php_ini "${PHP_INI_DIR}/php.ini"
 
+RUN pecl install -o -f redis \
+    &&  rm -rf /tmp/pear \
+    && docker-php-ext-enable redis \
+    &&  pecl config-set php_ini "${PHP_INI_DIR}/php.ini"
+
 RUN docker-php-ext-install intl
 
 WORKDIR /usr/share/app

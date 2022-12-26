@@ -24,10 +24,12 @@ services:
         - mariadb
         - mongodb
         - php
+        - redis
     depends_on:
         - mariadb
         - mongodb
         - php
+        - redis
     ports:
         - "80:80"
         - "443:443"
@@ -63,6 +65,18 @@ services:
     volumes:
         - ./data/mongodb:/data
         - mongo-data-dev:/bitnami/mongodb
+  redis:
+    container_name: redis
+    image: redis:4.0
+    env_file:
+        - ./.env
+    command: ["redis-server", "/usr/stage/etc/redis/redis.conf", "--appendonly yes"]
+    networks:
+        - laravel-ecosystem-net
+    ports:
+        - "6377:6379"
+    volumes:
+        - ./data/redis:/data
 networks:
     laravel-ecosystem-net: {}
 volumes:
